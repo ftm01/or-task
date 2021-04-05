@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: or-task
+  profiles:
+    active: default
+  datasource:
+    initialization-mode: always
+    schema: classpath:/schema.sql
+    #continue-on-error: true
+    url: jdbc:postgresql://localhost:5432/or_task
+    username: postgres
+    password: password
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true #org.postgresql.jdbc.PgConnection.createClob() is not yet implemented -fix
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    database: postgresql
+    database-platform: postgres
