@@ -23,3 +23,7 @@ spring:
     show-sql: false
     database: postgresql
     database-platform: postgres
+
+server:
+  servlet:
+    context-path: /api/v1
