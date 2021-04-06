@@ -1,5 +1,6 @@
 package com.task.or.web.v1.controller;
 
+import com.task.or.criteria.UserParams;
 import com.task.or.domain.User;
 import com.task.or.mapper.UserMapper;
 import com.task.or.services.UserService;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 @RestController
-@RequestMapping(path = "/users")
+@RequestMapping
 public class UserController {
 
     private final UserService userService;
@@ -35,10 +36,20 @@ public class UserController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ResponseWrapper<UserDTO>> getUser(@PathVariable("userId") Integer userId) {
-        User user = userService.getUser(userId);
+    @GetMapping(value = "/user", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<ResponseWrapper<UserDTO>> getUser(UserParams userParams) {
+        User user = userService.getUser(userParams);
         UserDTO userDTO = userMapper.toUserDTOWithGender(user);
         return ResponseEntity.ok(new ResponseWrapper<>(userDTO, HttpStatus.OK.value()));
     }
+
+
+
+//    @ResponseStatus(HttpStatus.OK)
+//    @GetMapping(value = "/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)
+//    public ResponseEntity<ResponseWrapper<UserDTO>> getUser(@PathVariable("userId") Integer userId) {
+//        User user = userService.getUser(userId);
+//        UserDTO userDTO = userMapper.toUserDTOWithGender(user);
+//        return ResponseEntity.ok(new ResponseWrapper<>(userDTO, HttpStatus.OK.value()));
+//    }
 }
