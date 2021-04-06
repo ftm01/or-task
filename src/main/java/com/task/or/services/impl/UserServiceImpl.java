@@ -28,11 +28,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUser(Integer userId) {
-        return userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException("User could not be found."));
-    }
-
-    @Override
     public User getUser(UserParams userParams) {
         if(!userParams.isIdSpecified() && !userParams.isPasswordSpecified()) {
             throw new MissingRequestParameterException("Parameters 'id' and 'password' are missing.");

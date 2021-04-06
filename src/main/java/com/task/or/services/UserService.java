@@ -9,7 +9,5 @@ public interface UserService {
 
     Collection<User> getAllUsers();
 
-    User getUser(Integer userId);
-
     User getUser(UserParams userParams);
 }

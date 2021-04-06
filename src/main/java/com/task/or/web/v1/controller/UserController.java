@@ -42,14 +42,4 @@ public class UserController {
         UserDTO userDTO = userMapper.toUserDTOWithGender(user);
         return ResponseEntity.ok(new ResponseWrapper<>(userDTO, HttpStatus.OK.value()));
     }
-
-
-
-//    @ResponseStatus(HttpStatus.OK)
-//    @GetMapping(value = "/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)
-//    public ResponseEntity<ResponseWrapper<UserDTO>> getUser(@PathVariable("userId") Integer userId) {
-//        User user = userService.getUser(userId);
-//        UserDTO userDTO = userMapper.toUserDTOWithGender(user);
-//        return ResponseEntity.ok(new ResponseWrapper<>(userDTO, HttpStatus.OK.value()));
-//    }
 }
