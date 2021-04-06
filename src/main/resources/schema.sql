@@ -8,8 +8,8 @@ CREATE TABLE users (
 );
 
 
-INSERT INTO users (name, password) VALUES ('Philipp', '$2a$10$8lkWgZGRfUiGNOTaKqEuZuIwB9LcC70rc7fs.sshdPbn7N96Ac0S.');
-INSERT INTO users (name, password) VALUES ('Naura', '$2a$10$8lkWgZGRfUiGNOTaKqEuZuIwB9LcC70rc7fs.sshdPbn7N96Ac0S.');
-INSERT INTO users (name, password) VALUES ('Bujar', '$2a$10$8lkWgZGRfUiGNOTaKqEuZuIwB9LcC70rc7fs.sshdPbn7N96Ac0S.');
-INSERT INTO users (name, password) VALUES ('Nora', '$2a$10$8lkWgZGRfUiGNOTaKqEuZuIwB9LcC70rc7fs.sshdPbn7N96Ac0S.');
-INSERT INTO users (name, password) VALUES ('Armend', 'baba');
+INSERT INTO users (name, password) VALUES ('Philipp', 'test');
+INSERT INTO users (name, password) VALUES ('Naura', 'test');
+INSERT INTO users (name, password) VALUES ('Bujar', 'test');
+INSERT INTO users (name, password) VALUES ('Nora', 'test');
+INSERT INTO users (name, password) VALUES ('Armend', 'test');
