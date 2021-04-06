@@ -21,3 +21,12 @@ Task for OpenResearch
    An authentication using tokens would be much more better and safer, like OAuth 2.0 for example.
    It does not send passwords as plaintext, it does not send them over GET requests so that they are not visible, 
    and nowhere else does it use them again except for the first time when authenticating and generating the token.
+   
+========================================================================================================================
+
+How to run the project?
+If you try to run the project at first, you will probably get an error because of the database setup.
+In the application.yml file, I specified to which database to connect, so you'll have to go in pgAdmin and create 
+a new database called "or_task", and there is no need to do anything else there, just come back and run the project. 
+The data will be read from schema.sql, so it will create automatically all the tables and insert some data in it so you 
+can test the application.
