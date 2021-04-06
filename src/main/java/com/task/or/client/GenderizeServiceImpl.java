@@ -28,7 +28,7 @@ public class GenderizeServiceImpl implements GenderizeService {
 
     @Override
     public GenderizeDataDTO getGender(String name) {
-        URI uri = UriComponentsBuilder.fromHttpUrl(baseUrl).path("/").query("name={keyword}").buildAndExpand(name).toUri();
+        URI uri = UriComponentsBuilder.fromHttpUrl(baseUrl).path("/").query("name={keyword}").buildAndExpand(name.toLowerCase()).toUri();
         ResponseEntity<GenderizeDataDTO> genderizeDataDTO = restTemplate.getForEntity(uri, GenderizeDataDTO.class);
         return Objects.requireNonNull(genderizeDataDTO.getBody(), "Data must not be null");
     }
